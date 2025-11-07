@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cat:*)",
+      "Bash(find:*)",
+      "Bash(python3 -m pip list:*)",
+      "Bash(~/.venv/jupyter/bin/python:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

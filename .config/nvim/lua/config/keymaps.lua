@@ -5,6 +5,9 @@ discipline.cowboy()
 local keymap = vim.keymap
 local opts = { noremap = true, silent = true }
 
+-- Exit insert mode with jk
+keymap.set("i", "jk", "<Esc>", opts)
+
 -- Do things without affecting the registers
 keymap.set("n", "x", '"_x')
 keymap.set("n", "<Leader>p", '"0p')
@@ -73,3 +76,19 @@ end)
 
 -- skk
 vim.keymap.set({ "i", "c" }, [[<C-j>]], [[<Plug>(skkeleton-enable)]], { noremap = false })
+
+-- Terminal mode keymaps
+keymap.set("t", "jk", "<C-\\><C-n>", { desc = "Exit terminal mode" })
+keymap.set("t", "<C-w>", "<C-\\><C-n><C-w>", { desc = "Window commands in terminal" })
+
+-- Open current file in VSCode
+keymap.set("n", "<leader>vs", function()
+  local filepath = vim.fn.expand("%:p")
+  if filepath ~= "" then
+    local line = vim.fn.line(".")
+    local col = vim.fn.col(".")
+    vim.fn.system(string.format("code --goto %s:%d:%d", vim.fn.shellescape(filepath), line, col))
+  else
+    print("No file to open")
+  end
+end, { noremap = true, silent = true, desc = "Open current file in VSCode" })

@@ -9,6 +9,9 @@ return {
 
       -- Git リポジトリのルートを自動検出
       git_repo_cwd = true,
+
+      -- Claude CLI への完全パス
+      terminal_cmd = vim.fn.expand("~/.claude/local/claude"),
     },
     keys = {
       { "<leader>ac", "<cmd>ClaudeCode<cr>", desc = "Toggle Claude Code" },
