@@ -3,15 +3,17 @@ return {
     "coder/claudecode.nvim",
     dependencies = { "folke/snacks.nvim" },
     opts = {
-      -- ターミナルの位置とサイズ
-      split_side = "right", -- "left" または "right"
-      split_width_percentage = 0.30, -- 30%の幅
-
       -- Git リポジトリのルートを自動検出
       git_repo_cwd = true,
 
       -- Claude CLI への完全パス
       terminal_cmd = vim.fn.expand("~/.claude/local/claude"),
+
+      -- ターミナルの位置とサイズ
+      terminal = {
+        split_side = "right", -- "left" または "right"
+        split_width_percentage = 0.35, -- 35%の幅
+      },
     },
     keys = {
       { "<leader>ac", "<cmd>ClaudeCode<cr>", desc = "Toggle Claude Code" },

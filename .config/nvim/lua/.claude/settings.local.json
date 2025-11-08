@@ -4,7 +4,13 @@
       "Bash(cat:*)",
       "Bash(find:*)",
       "Bash(python3 -m pip list:*)",
-      "Bash(~/.venv/jupyter/bin/python:*)"
+      "Bash(~/.venv/jupyter/bin/python:*)",
+      "WebFetch(domain:code.claude.com)",
+      "Bash(tree:*)",
+      "Bash(python3:*)",
+      "WebFetch(domain:github.com)",
+      "Bash(timeout 3 ~/.claude/local/claude:*)",
+      "Bash(~/.claude/local/claude --resume)"
     ],
     "deny": [],
     "ask": []

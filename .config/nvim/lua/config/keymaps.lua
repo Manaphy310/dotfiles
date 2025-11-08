@@ -92,3 +92,8 @@ keymap.set("n", "<leader>vs", function()
     print("No file to open")
   end
 end, { noremap = true, silent = true, desc = "Open current file in VSCode" })
+
+-- Claude Code history
+keymap.set("n", "<leader>ah", function()
+  require("craftzdog.claude-history").show_history()
+end, { noremap = true, silent = true, desc = "Show Claude Code conversation history" })
