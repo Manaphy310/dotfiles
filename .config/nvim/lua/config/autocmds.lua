@@ -12,3 +12,11 @@ vim.api.nvim_create_autocmd("FileType", {
 		vim.opt.conceallevel = 0
 	end,
 })
+
+-- Override LazyVim's spell setting for text files
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = { "text", "plaintex", "typst", "gitcommit", "markdown" },
+	callback = function()
+		vim.opt_local.spell = false
+	end,
+})
