@@ -4,7 +4,7 @@ return {
     terminal = {
       win = {
         position = "bottom",
-        height = 0.15, -- 通常のターミナルは15%の高さ
+        height = 0.20, -- 通常のターミナルは20%の高さ
       },
     },
     lazygit = {

@@ -10,7 +10,11 @@
       "Bash(python3:*)",
       "WebFetch(domain:github.com)",
       "Bash(timeout 3 ~/.claude/local/claude:*)",
-      "Bash(~/.claude/local/claude --resume)"
+      "Bash(~/.claude/local/claude --resume)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "WebFetch(domain:api.github.com)",
+      "WebFetch(domain:www.lazyvim.org)",
+      "WebSearch"
     ],
     "deny": [],
     "ask": []
