@@ -13,6 +13,13 @@ return {
         width = 0.9,
         height = 0.9,
       },
+      -- パフォーマンス改善のための設定
+      configure = function(_, opts)
+        -- より高速なターミナルタイプを設定
+        if vim.fn.has("mac") == 1 then
+          vim.env.TERM = "xterm-256color"
+        end
+      end,
     },
   },
 }
