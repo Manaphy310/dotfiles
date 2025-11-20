@@ -27,10 +27,6 @@ return {
 				"svelte",
 			},
 
-			-- matchup = {
-			-- 	enable = true,
-			-- },
-
 			-- https://github.com/nvim-treesitter/playground#query-linter
 			query_linter = {
 				enable = true,
@@ -59,6 +55,13 @@ return {
 		},
 		config = function(_, opts)
 			require("nvim-treesitter").setup(opts)
+
+			-- Treesitterを自動的に有効化
+			vim.api.nvim_create_autocmd("FileType", {
+				callback = function()
+					pcall(vim.treesitter.start)
+				end,
+			})
 
 			-- MDX
 			vim.filetype.add({
