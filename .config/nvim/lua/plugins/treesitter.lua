@@ -14,10 +14,14 @@ return {
 				"gitignore",
 				"go",
 				"graphql",
+				"html",
 				"http",
 				"java",
+				"javascript",
 				"php",
 				"rust",
+				"tsx",
+				"typescript",
 				"scss",
 				"sql",
 				"svelte",
@@ -54,8 +58,7 @@ return {
 			},
 		},
 		config = function(_, opts)
-			local TS = require("nvim-treesitter")
-			TS.setup(opts)
+			require("nvim-treesitter").setup(opts)
 
 			-- MDX
 			vim.filetype.add({
